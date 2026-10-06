@@ -1,3 +1,5 @@
+import "./App.css";
+
 function App() {
   const projects = [
     {
@@ -7,36 +9,40 @@ function App() {
         "A Flutter mobile application for navigating Cairo Metro routes, calculating stations, travel time, direction, and finding nearby stations.",
       tech: ["Flutter", "Dart", "Geolocator", "SharedPreferences"],
       featured: true,
-      link: "https://play.google.com/store/apps/details?id=com.shimaakhaled.monometro",
-      linkText: "Google Play",
+      github: "https://github.com/eslam158/mono-metro_app",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.shimaakhaled.monometro",
     },
     {
       number: "02",
       title: "Notes App",
       description:
-        "A modern notes application built with Flutter, focused on organizing and managing notes with local database storage.",
-      tech: ["Flutter", "Dart", "SQLite", "Floor"],
+        "A modern Flutter notes application with local SQLite storage using Floor, supporting CRUD operations, optional locations, and shake-to-delete functionality.",
+      tech: ["Flutter", "Dart", "Floor", "SQLite", "Sensors Plus"],
+      github: "https://github.com/eslam158/notes_app",
     },
     {
       number: "03",
-      title: "Weather App",
+      title: "News App",
       description:
-        "A weather application that retrieves weather information from an external API and presents it through a clean responsive interface.",
-      tech: ["Flutter", "Dart", "REST API", "WeatherAPI"],
+        "A Flutter news application that fetches and displays news articles from REST APIs with category-based browsing.",
+      tech: ["Flutter", "Dart", "Dio", "REST API"],
+      github: "https://github.com/eslam158/News_app",
     },
     {
       number: "04",
       title: "Music App",
       description:
-        "A simple and interactive music player application for playing different tunes with a clean mobile interface.",
-      tech: ["Flutter", "Dart", "Audio Playback"],
+        "A Flutter music application with a clean interface for browsing and playing music.",
+      tech: ["Flutter", "Dart", "UI"],
     },
     {
       number: "05",
       title: "E-Commerce App",
       description:
-        "A full-featured e-commerce mobile application with authentication, products, cart functionality, and Firebase integration.",
-      tech: ["Flutter", "Firebase", "Firestore", "Firebase Auth"],
+        "A Flutter e-commerce application with product browsing, authentication, and Firebase integration.",
+      tech: ["Flutter", "Dart", "Firebase"],
+      github: "https://github.com/eslam158/e-commerce-app",
     },
   ];
 
@@ -158,12 +164,12 @@ function App() {
           <p className="section-label">03 — PROJECTS</p>
 
           <h2>
-            Selected
+            Things I've
             <br />
-            <span>work.</span>
+            <span>built.</span>
           </h2>
 
-          <div className="projects-container">
+          <div className="projects-grid">
             {projects.map((project) => (
               <article
                 className={`project-card ${
@@ -171,40 +177,42 @@ function App() {
                 }`}
                 key={project.number}
               >
-                <div className="project-top">
-                  <span className="project-number">
-                    {project.number}
-                  </span>
-
-                  {project.featured && (
-                    <span className="featured-label">
-                      FEATURED PROJECT
-                    </span>
-                  )}
-                </div>
+                <div className="project-number">{project.number}</div>
 
                 <div className="project-content">
                   <h3>{project.title}</h3>
 
                   <p>{project.description}</p>
 
-                  <div className="tech-list">
-                    {project.tech.map((technology) => (
-                      <span key={technology}>{technology}</span>
+                  <div className="project-tech">
+                    {project.tech.map((tech) => (
+                      <span key={tech}>{tech}</span>
                     ))}
                   </div>
 
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
-                    >
-                      {project.linkText}
-                      <span>↗</span>
-                    </a>
-                  )}
+                  <div className="project-links">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link"
+                      >
+                        GitHub <span>↗</span>
+                      </a>
+                    )}
+
+                    {project.playStore && (
+                      <a
+                        href={project.playStore}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link"
+                      >
+                        Google Play <span>↗</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
@@ -215,20 +223,16 @@ function App() {
           <p className="section-label">04 — EXPERIENCE</p>
 
           <h2>
-            Experience &
-            <br />
+            Experience &<br />
             <span>training.</span>
           </h2>
 
           <div className="timeline">
             <div className="timeline-item">
-              <span className="timeline-date">
-                2026 — PRESENT
-              </span>
+              <span className="timeline-date">2026 — PRESENT</span>
 
               <div>
                 <h3>Digital Egypt Pioneers Initiative</h3>
-
                 <p>Flutter / Mobile Application Development</p>
 
                 <span className="timeline-description">
@@ -239,13 +243,10 @@ function App() {
             </div>
 
             <div className="timeline-item">
-              <span className="timeline-date">
-                OCT — DEC 2025
-              </span>
+              <span className="timeline-date">OCT — DEC 2025</span>
 
               <div>
                 <h3>Concentrix</h3>
-
                 <p>Call Center Agent</p>
 
                 <span className="timeline-description">
@@ -256,18 +257,15 @@ function App() {
             </div>
 
             <div className="timeline-item">
-              <span className="timeline-date">
-                JUL — AUG 2025
-              </span>
+              <span className="timeline-date">JUL — AUG 2025</span>
 
               <div>
                 <h3>AI & Machine Learning Training</h3>
-
                 <p>Modern Academy</p>
 
                 <span className="timeline-description">
-                  Practical training in Python, data preprocessing,
-                  machine learning, classification and regression.
+                  Practical training in Python, data preprocessing, machine
+                  learning, classification and regression.
                 </span>
               </div>
             </div>
@@ -357,8 +355,7 @@ function App() {
               download
               className="cv-button"
             >
-              Download CV
-              <span>↓</span>
+              Download CV <span>↓</span>
             </a>
 
             <a
@@ -367,8 +364,7 @@ function App() {
               rel="noreferrer"
               className="cv-view-button"
             >
-              View CV
-              <span>↗</span>
+              View CV <span>↗</span>
             </a>
           </div>
         </section>
