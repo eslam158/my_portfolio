@@ -31,10 +31,11 @@ function App() {
     },
     {
       number: "04",
-      title: "Music App",
+      title: "Language Learning App",
       description:
-        "A Flutter music application with a clean interface for browsing and playing music.",
-      tech: ["Flutter", "Dart", "UI"],
+        "A Flutter-based language learning application that helps users learn Japanese vocabulary through categories, images, and audio pronunciation.",
+      tech: ["Flutter", "Dart", "Audio", "UI"],
+      github: "https://github.com/eslam158/Language_learning_App",
     },
     {
       number: "05",
@@ -86,6 +87,7 @@ function App() {
       </nav>
 
       <main>
+        {/* HERO */}
         <section className="hero">
           <div className="hero-content">
             <p className="hero-small">MOBILE APPLICATION DEVELOPER</p>
@@ -124,6 +126,7 @@ function App() {
           </div>
         </section>
 
+        {/* ABOUT */}
         <section id="about" className="section">
           <p className="section-label">01 — ABOUT</p>
 
@@ -142,6 +145,7 @@ function App() {
           </p>
         </section>
 
+        {/* SKILLS */}
         <section id="skills" className="section skills-section">
           <p className="section-label">02 — SKILLS</p>
 
@@ -160,6 +164,7 @@ function App() {
           </div>
         </section>
 
+        {/* PROJECTS */}
         <section id="projects" className="section projects-section">
           <p className="section-label">03 — PROJECTS</p>
 
@@ -191,22 +196,20 @@ function App() {
                   </div>
 
                   <div className="project-links">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-link"
-                      >
-                        GitHub <span>↗</span>
-                      </a>
-                    )}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      GitHub <span>↗</span>
+                    </a>
 
                     {project.playStore && (
                       <a
                         href={project.playStore}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="project-link"
                       >
                         Google Play <span>↗</span>
@@ -219,6 +222,7 @@ function App() {
           </div>
         </section>
 
+        {/* EXPERIENCE */}
         <section id="experience" className="section">
           <p className="section-label">04 — EXPERIENCE</p>
 
@@ -233,6 +237,7 @@ function App() {
 
               <div>
                 <h3>Digital Egypt Pioneers Initiative</h3>
+
                 <p>Flutter / Mobile Application Development</p>
 
                 <span className="timeline-description">
@@ -247,6 +252,7 @@ function App() {
 
               <div>
                 <h3>Concentrix</h3>
+
                 <p>Call Center Agent</p>
 
                 <span className="timeline-description">
@@ -261,6 +267,7 @@ function App() {
 
               <div>
                 <h3>AI & Machine Learning Training</h3>
+
                 <p>Modern Academy</p>
 
                 <span className="timeline-description">
@@ -272,6 +279,7 @@ function App() {
           </div>
         </section>
 
+        {/* EDUCATION */}
         <section className="section education-section">
           <p className="section-label">05 — EDUCATION</p>
 
@@ -291,6 +299,7 @@ function App() {
           </div>
         </section>
 
+        {/* CONTACT */}
         <section id="contact" className="section contact-section">
           <p className="section-label">06 — CONTACT</p>
 
@@ -318,7 +327,7 @@ function App() {
             <a
               href="https://www.linkedin.com/in/eslam-atef-abdelgawad"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="contact-link"
             >
               <span>LinkedIn</span>
@@ -329,7 +338,7 @@ function App() {
             <a
               href="https://github.com/eslam158"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="contact-link"
             >
               <span>GitHub</span>
@@ -340,7 +349,7 @@ function App() {
             <a
               href="https://wa.me/201220092538"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="contact-link"
             >
               <span>WhatsApp</span>
@@ -361,7 +370,7 @@ function App() {
             <a
               href="/Eslam_mobile_developer_CV.pdf"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="cv-view-button"
             >
               View CV <span>↗</span>
@@ -370,6 +379,7 @@ function App() {
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer className="footer">
         <div>© {new Date().getFullYear()} Eslam Atef</div>
 
